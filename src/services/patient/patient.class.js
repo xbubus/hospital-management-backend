@@ -11,4 +11,13 @@ exports.Patient = class Patient extends Service {
     async create(data){
 
     }
+
+    async chceckOut(patientId){
+        //this.Model.updateOne({_id: patientId},{$set: {????}})
+    }
+
+    async changeBed(patientId, newBedId){
+
+    }
+    
 };
