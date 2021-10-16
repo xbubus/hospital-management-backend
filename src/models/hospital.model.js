@@ -1,26 +1,14 @@
-// patient-model.js - A mongoose model
+// hospital-model.js - A mongoose model
 // 
 // See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
-
-const {Schema, Types} = require('mongoose');
-
 module.exports = function (app) {
-  const modelName = 'patient';
+  const modelName = 'hospital';
   const mongooseClient = app.get('mongooseClient');
-  const { Schema } = mongooseClient;
+  const { Schema,Types } = mongooseClient;
   const schema = new Schema({
-    personalData:{
-      name: { type: String, required: true },
-      PESEL: {type: String, required: false },
-      email: {type: String, required: false},
-      phoneNumber: {type: String, required: false}
-    },
-    bed: {type: String, required: false},
-    dateOfAdmission: {type:Date},
-    diseaseHistory: {type:String},
-    clinicalCondition: {type:String},
-    contagious: {type:Boolean}
+    name: { type: String, required: true },
+    floors: [{type: Types.ObjectId, required: false, index: true}],
   }, {
     timestamps: true
   });
