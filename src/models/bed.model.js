@@ -7,10 +7,11 @@ module.exports = function (app) {
   const mongooseClient = app.get('mongooseClient');
   const { Schema, Types} = mongooseClient;
   const schema = new Schema({
-    isEmpty: { type: String, required: true },
+    isEmpty: { type: Boolean, required: true },
     room:{type: Types.ObjectId, required: false, index: true},
     patient:{type: Types.ObjectId, required: false, index: true},
     name: { type: String, required: false },
+    respirator: {type: Boolean, required: false},
   }, {
     timestamps: true
   });

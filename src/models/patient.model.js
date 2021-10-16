@@ -20,7 +20,8 @@ module.exports = function (app) {
     dateOfAdmission: {type:Date},
     diseaseHistory: {type:String},
     clinicalCondition: {type:String},
-    contagious: {type:Boolean}
+    contagious: {type:Boolean},
+    pdf:Schema.Types.Mixed,
   }, {
     timestamps: true
   });
